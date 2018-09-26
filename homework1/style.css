@@ -1,0 +1,21 @@
+body {
+    background: lightgray;
+    font-family: 'Berlin Sans FB';
+    color: black;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    border: solid;
+    background-color: #47433F;
+}
+
+
+
+
+
