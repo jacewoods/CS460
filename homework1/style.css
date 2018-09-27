@@ -5,17 +5,32 @@ body {
 }
 
 a {
-    color: #fff;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: underline;
 }
 
 .navbar {
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     border: solid;
     background-color: #47433F;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
 
+.right {
 
+    margin-left: 50px;
+    margin-right: auto;
+    width: 30%;
+}
 
-
+.left {
+    margin-left: 50px;
+    margin-right: auto;
+    width: 30%;
+}
