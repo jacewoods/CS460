@@ -1,1 +1,1 @@
-first commit for homework 2
+second commit for homework 2
