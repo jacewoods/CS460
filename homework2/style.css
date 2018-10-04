@@ -4,33 +4,19 @@ body {
     color: black;
 }
 
-a {
-    color: white !important;
-    text-decoration: underline;
+.panel-heading {
+    border-style: solid;
+    padding:25px;
 }
-
-.navbar {
-    margin-bottom: 15px;
-    border: solid;
-    background-color: #47433F;
+.panel-body {
+    border-style: dotted;
+    padding-left:25px;
+    padding-right:25px;
 }
 
 .center {
     display: block;
     margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-}
-
-.right {
-
-    margin-left: 50px;
-    margin-right: auto;
-    width: 30%;
-}
-
-.left {
-    margin-left: 50px;
     margin-right: auto;
     width: 30%;
 }
