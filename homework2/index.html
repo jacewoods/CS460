@@ -102,27 +102,27 @@
                 <h4>The Toppings</h4>
                 <ul>
                     <li>
-                        <input type="checkbox" name="lettuce" id="lettuce" checked="checked" value="Lettuce" />
+                        <input type="checkbox" id="lettuce" checked="checked" value="Lettuce" />
                         <label for="lettuce">Lettuce</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="onion" id="onion" checked="checked" value="Onion" />
+                        <input type="checkbox" id="onion" checked="checked" value="Onion" />
                         <label for="onion">Onion</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="pickle" id="pickle" checked="checked" value="Pickle" />
+                        <input type="checkbox" id="pickle" checked="checked" value="Pickle" />
                         <label for="pickle">Pickle</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="tomato" id="tomato" checked="checked" value="Tomato" />
+                        <input type="checkbox" id="tomato" checked="checked" value="Tomato" />
                         <label for="tomato">Tomato</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="ketchup" id="ketchup" value="Ketchup" />
+                        <input type="checkbox" id="ketchup" value="Ketchup" />
                         <label for="ketchup">Ketchup</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="mustard" id="mustard" value="Mustard" />
+                        <input type="checkbox" id="mustard" value="Mustard" />
                         <label for="mustard">Mustard</label>
                     </li>
                     <li>
@@ -133,23 +133,23 @@
                 <h4>Premium Toppings</h4>
                 <ul>
                     <li>
-                        <input type="checkbox" name="jalapenos" id="jalapenos" value="Jalapenos" />
+                        <input type="checkbox" id="jalapenos" value="Jalapenos" />
                         <label for="jalapenos">Jalapenos</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="bacon" id="bacon" value="Bacon" />
+                        <input type="checkbox" id="bacon" value="Bacon" />
                         <label for="bacon">Bacon</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="avocado" id="avocado" value="Avocado" />
+                        <input type="checkbox" id="avocado" value="Avocado" />
                         <label for="avocado">Avocado</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="pineapple" id="pineapple" value="Pineapple" />
+                        <input type="checkbox" id="pineapple" value="Pineapple" />
                         <label for="pineapple">Pineapple</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="egg" id="egg" value="Egg" />
+                        <input type="checkbox" id="egg" value="Egg" />
                         <label for="egg">Egg</label>
                     </li>
                 </ul>
@@ -190,25 +190,54 @@
             $('#thetoppings').hide().delay(1500).fadeIn(300);
             $('#premiumtoppings').hide().delay(1800).fadeIn(300);
             $('.burgerBuilder').hide().delay(2100).fadeIn(300);
-
         });
 
         function notesFromKitchen() {
+            //Creates header and start of second list
             $(".fromKitchen").empty().append("<h4>Notes from the Kitchen:</h4><ul>").css("padding-bottom", "10px");
+
+
             $('div input[type=radio').each(function () {
+                //Prints if either gluten free bun or lettuce wrap were selected
                 if ($(this).is(":checked") && (($(this).attr('value') == "Gluten Free Bun") || $(this).attr('value') == "Lettuce Wrap")) {
-                    $(".fromKitchen").append("<li>" + "Nice plan on the bun, cutting back on carbs is always a good option!").append("</li>");
+                    $(".fromKitchen").append("<li>" + "Nice plan on the bun, cutting back on carbs is always a good option!" + "</li>");
                 }
+                //Prints if either veggie or vegan patty were selected
                 if ($(this).is(":checked") && (($(this).attr('value') == "Veggie Patty") || $(this).attr('value') == "Vegan Patty")) {
-                    $(".fromKitchen").append("<li>" + "Way to think about the cows!").append("</li>");
+                    $(".fromKitchen").append("<li>" + "Way to think about the cows!" + "</li>");
                 }
             })
+
+            //Only prints if a cheese was selected
             $('#thecheese input[type=radio').each(function () {
                 if ($(this).is(":checked") && ($(this).attr('value') != "No Cheese")) {
-                    $(".fromKitchen").append("<li>" + "Did you know? It takes 10 pounds of milk to make just 1 pound of cheese.").append("</li>");
+                    $(".fromKitchen").append("<li>" + "Did you know? It takes 10 pounds of milk to make just 1 pound of cheese." + "</li>");
                 }
             })
-            $('div input[type=radio').each(function () {
+            $('div input[type=checkbox').each(function () {
+                //These functions react if pickles, jalapenos or bacon are checked, respectively
+                if ($(this).is(":checked") && ($(this).attr('value') == "Pickle")) {
+                    $(".fromKitchen").append("<li>" + "Who doesn't love pickles?").append("</li>");
+                }
+
+                if ($(this).is(":checked") && ($(this).attr('value') == "Jalapenos")) {
+                    $(".fromKitchen").append("<li>" + "Spicy. I like it!").append("</li>");
+                }
+
+                if ($(this).is(":checked") && ($(this).attr('value') == "Bacon")) {
+                    $(".fromKitchen").append("<li>" + "It wouldn't be a burger without Bacon." + "</li>");
+                }
+
+                //Checks if both pineapple and egg are selected
+                if ($(this).is(":checked") && ($(this).attr('value') == "Pineapple")) {
+
+                    $('#premiumtoppings input[type=checkbox').each(function () {
+
+                        if ($(this).is(":checked") && ($(this).attr('value') == "Egg")) {
+                            $(".fromKitchen").append("<li>" + "Pineapple and egg together? Interesting, but who am I to judge!").append("</li>");
+                        }
+                    })
+                }
 
             })
             $(".fromKitchen").append("<li>" + "Thanks for Building! Try a few other selections to find out what we have to say!").append("</li>");
@@ -217,7 +246,6 @@
         //Function to create the list based on ingredient selection
         function burgerList() {
             $(".listBuilder").empty().append("<h4>Your Burger Ingredients:</h4><ul>").css("padding-bottom", "10px");
-            var mainIngredients = [];
             $('div input[type=radio').each(function () {
                 //Adds all selected radio elements to the list, will not add cheese to list if "None" is selected in Cheese radio option
                 if ($(this).is(":checked") && $(this).attr('value') != "No Cheese") {
@@ -225,7 +253,6 @@
                 }
             })
 
-            var toppings = [];
             $('div input[type=checkbox]').each(function () {
                 //Adds all selected checkbox elements to the list
                 if ($(this).is(":checked")) {
@@ -235,6 +262,7 @@
 
             //Calls the second list to be created
             notesFromKitchen();
+
             return false;
         };
 
