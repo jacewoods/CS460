@@ -57,15 +57,15 @@
                 <h4>The Patty</h4>
                 <ul>
                     <li>
-                        <input type="radio" name="choosePatty" checked="checked" id="beef" value="Beef">
+                        <input type="radio" name="choosePatty" checked="checked" id="beef" value="Beef Patty">
                         <label for="beef">Beef</label>
                     </li>
                     <li>
-                        <input type="radio" name="choosePatty" id="veggie" value="Veggie">
+                        <input type="radio" name="choosePatty" id="veggie" value="Veggie Patty">
                         <label for="veggie">Veggie</label>
                     </li>
                     <li>
-                        <input type="radio" name="choosePatty" id="vegan" value="Vegan">
+                        <input type="radio" name="choosePatty" id="vegan" value="Vegan Patty">
                         <label for="vegan">Vegan</label>
                     </li>
                 </ul>
@@ -80,15 +80,15 @@
                         <label for="noCheese">None</label>
                     </li>
                     <li>
-                        <input type="radio" name="chooseCheese" checked="checked" id="cheddar" value="Cheddar">
+                        <input type="radio" name="chooseCheese" checked="checked" id="cheddar" value="Cheddar Cheese">
                         <label for="cheddar">Cheddar</label>
                     </li>
                     <li>
-                        <input type="radio" name="chooseCheese" id="provolone" value="Provolone">
+                        <input type="radio" name="chooseCheese" id="provolone" value="Provolone Cheese">
                         <label for="provolone">Provolone</label>
                     </li>
                     <li>
-                        <input type="radio" name="chooseCheese" id="swiss" value="Swiss">
+                        <input type="radio" name="chooseCheese" id="swiss" value="Swiss Cheese">
                         <label for="swiss">Swiss</label>
                     </li>
                 </ul>
@@ -102,11 +102,11 @@
                 <h4>The Toppings</h4>
                 <ul>
                     <li>
-                        <input type="checkbox" name="lettuce" id="lettuce" checked="checked" value="Lettuce"/>
+                        <input type="checkbox" name="lettuce" id="lettuce" checked="checked" value="Lettuce" />
                         <label for="lettuce">Lettuce</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="onion" id="onion" checked="checked" value="Onion"/>
+                        <input type="checkbox" name="onion" id="onion" checked="checked" value="Onion" />
                         <label for="onion">Onion</label>
                     </li>
                     <li>
@@ -118,7 +118,7 @@
                         <label for="tomato">Tomato</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="ketchup" id="ketchup" value="Ketchup"/>
+                        <input type="checkbox" name="ketchup" id="ketchup" value="Ketchup" />
                         <label for="ketchup">Ketchup</label>
                     </li>
                     <li>
@@ -129,7 +129,7 @@
                 </ul>
             </div>
             <!--Select Premium Toppings-->
-            <div class="col-sm-6" id="premiumtoppings">
+            <div class='col-sm-6' id="premiumtoppings">
                 <h4>Premium Toppings</h4>
                 <ul>
                     <li>
@@ -159,14 +159,24 @@
         <!--The Burger Button-->
         <div class="row">
             <div class="col-sm-12 text-center">
-                <input type="submit" class="burgerBuilder" value="Build the Burger!" onclick="return burgerGraph()">
+                <input type="submit" class="burgerBuilder" value="Build the Burger!" onclick="return burgerList()">
             </div>
         </div>
 
 
-        <p class="tableBuilder"></p>
-    </form>
 
+        <!--List of selected elements-->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="listBuilder"></div>
+            </div>
+            <!--List of notes based on selected elements-->
+            <div class="col-sm-6">
+                <div class="fromKitchen"></div>
+            </div>
+        </div>
+
+    </form>
 
     <!--jQuery-->
     <script>
@@ -183,31 +193,48 @@
 
         });
 
-        function burgerGraph() {
+        function notesFromKitchen() {
+            $(".fromKitchen").empty().append("<h4>Notes from the Kitchen:</h4><ul>").css("padding-bottom", "10px");
+            $('div input[type=radio').each(function () {
+                if ($(this).is(":checked") && (($(this).attr('value') == "Gluten Free Bun") || $(this).attr('value') == "Lettuce Wrap")) {
+                    $(".fromKitchen").append("<li>" + "Nice plan on the bun, cutting back on carbs is always a good option!").append("</li>");
+                }
+                if ($(this).is(":checked") && (($(this).attr('value') == "Veggie Patty") || $(this).attr('value') == "Vegan Patty")) {
+                    $(".fromKitchen").append("<li>" + "Way to think about the cows!").append("</li>");
+                }
+            })
+            $('#thecheese input[type=radio').each(function () {
+                if ($(this).is(":checked") && ($(this).attr('value') != "No Cheese")) {
+                    $(".fromKitchen").append("<li>" + "Did you know? It takes 10 pounds of milk to make just 1 pound of cheese.").append("</li>");
+                }
+            })
+            $('div input[type=radio').each(function () {
 
+            })
+            $(".fromKitchen").append("<li>" + "Thanks for Building! Try a few other selections to find out what we have to say!").append("</li>");
+        };
+
+        //Function to create the list based on ingredient selection
+        function burgerList() {
+            $(".listBuilder").empty().append("<h4>Your Burger Ingredients:</h4><ul>").css("padding-bottom", "10px");
             var mainIngredients = [];
             $('div input[type=radio').each(function () {
-                if ($(this).is(":checked")) {
-                    mainIngredients.push($(this).attr('value'), ", ");
+                //Adds all selected radio elements to the list, will not add cheese to list if "None" is selected in Cheese radio option
+                if ($(this).is(":checked") && $(this).attr('value') != "No Cheese") {
+                    $(".listBuilder").append("<li>" + $(this).attr('value')).append("</li>");
                 }
             })
 
             var toppings = [];
             $('div input[type=checkbox]').each(function () {
+                //Adds all selected checkbox elements to the list
                 if ($(this).is(":checked")) {
-                    toppings.push($(this).attr('value'), ", ");
+                    $(".listBuilder").append("<li>" + $(this).attr('value')).append("</li>");
                 }
             })
-            test_innerHTML = mainIngredients + toppings;
-            $(".tableBuilder").empty().append(mainIngredients).append(toppings);
-            /*
-            if ($('#avocado').is(":checked")) {
-                $(".tablebegin").empty().append(avocado.value + " ");
-            }
-            else {
-                $(".tablebegin").empty()
-            }
-            */
+
+            //Calls the second list to be created
+            notesFromKitchen();
             return false;
         };
 

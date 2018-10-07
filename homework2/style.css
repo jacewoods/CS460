@@ -33,6 +33,7 @@ ul {
     font-size: 20pt;
     font: bold;
     margin-top: 10px;
+    margin-bottom: 50px;
     padding: 25px;
     border-radius: 20%;
     border-color: black;
@@ -49,3 +50,7 @@ ul {
         box-shadow: 0 5px #666;
         transform: translateY(4px);
     }
+
+.listBuilder {
+    font-size: 15pt;
+}
