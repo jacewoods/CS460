@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace generateBinary
 {
-    public interface IQueueInterface<T>
+    class QueueUnderflowException
     {
-        T push(T element);
-
-        T pop();
-
-        Boolean isEmpty();
+        
     }
 }
