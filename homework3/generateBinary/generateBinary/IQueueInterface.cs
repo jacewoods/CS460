@@ -17,18 +17,18 @@ namespace generateBinary
         /// </summary>
         /// <param name="element"></param>
         /// <returns> the element that was enqueued </returns>
-        T push(T element);
+        T Push(T element);
 
         /// <summary>
         /// Removes front element
         /// </summary>
         /// <returns> Returns front element </returns>
-        T pop();
+        T Pop();
 
         /// <summary>
         /// Check to see if queue is empty
         /// </summary>
         /// <returns> True if the queue is empty, false if it is not </returns>
-        bool isEmpty();
+        bool IsEmpty();
     }
 }
