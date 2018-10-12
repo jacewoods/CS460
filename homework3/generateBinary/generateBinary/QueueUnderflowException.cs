@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace generateBinary
 {
-    class QueueUnderflowException
+    public class QueueUnderflowException
     {
+        //base :();
         
     }
 }
