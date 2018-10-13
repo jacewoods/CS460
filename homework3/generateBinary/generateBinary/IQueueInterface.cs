@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace generateBinary
+﻿namespace generateBinary
 {
     /// <summary>
     /// First in, first out (FIFO) Singly linked queue interface

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace generateBinary
 {
     /// <summary>
-    /// Singly Linked FIFO Queue
+    /// Singly Linked First In First Out Queue
     /// </summary>
+    /// <typeparam name="T"> Type T enables any variable type to be stored within the list </typeparam>
     class LinkedQueue<T> : IQueueInterface<T>
     {
         private Node<T> front;
