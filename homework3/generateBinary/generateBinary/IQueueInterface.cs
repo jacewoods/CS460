@@ -1,17 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace generateBinary
+﻿namespace generateBinary
 {
-    public interface IQueueInterface<T>
+    /// <summary>
+    /// First in, first out (FIFO) Singly linked queue interface
+    /// </summary>
+    interface IQueueInterface<T>
     {
-        T push(T element);
+        /// <summary>
+        /// Adds an element to the end of the queue
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns> the element that was enqueued </returns>
+        T Push(T element);
 
-        T pop();
+        /// <summary>
+        /// Removes front element
+        /// </summary>
+        /// <returns> Returns front element </returns>
+        T Pop();
 
-        Boolean isEmpty();
+        /// <summary>
+        /// Check to see if queue is empty
+        /// </summary>
+        /// <returns> True if the queue is empty, false if it is not </returns>
+        bool IsEmpty();
     }
 }
