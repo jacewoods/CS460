@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace generateBinary
 {
-    class Program
+    public class Program
     {
         static LinkedList<string> generateBinaryRepresentationList(int n)
         {
             LinkedQueue<StringBuilder> q = new LinkedQueue<StringBuilder>();
 
-            LinkedList<String> output = new LinkedList<String>();
+            LinkedList<string> output = new LinkedList<string>();
 
             if(n < 1)
             {
@@ -42,8 +42,8 @@ namespace generateBinary
             int n = 10;
             if(args.Length < 1)
             {
-                Console.Out.WriteLine("Please invoke with the max value to print binary up to, like this:");
-                Console.Out.WriteLine("\tC# Program 12");
+                Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
+                Console.WriteLine("\tC# Program 12");
                 return;
             }
             try
@@ -52,7 +52,7 @@ namespace generateBinary
             }
             catch (FormatException e)
             {
-                Console.Out.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
+                Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
                 return;
             }
             LinkedList<string> output = generateBinaryRepresentationList(n);
@@ -62,10 +62,11 @@ namespace generateBinary
             {
                 for(int i =0; i < maxLength - s.Length; ++i)
                 {
-                    Console.Out.WriteLine(" ");
+                    Console.Write(" ");
                 }
-                Console.Out.WriteLine(s);
+                Console.WriteLine(s);
             }
+
         }
            
     }
