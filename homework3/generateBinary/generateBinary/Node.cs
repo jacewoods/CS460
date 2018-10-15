@@ -3,7 +3,7 @@
     /// <summary>
     /// Singly linked node class
     /// </summary>
-    /// <typeparam name="T"> Type T allows any type to be used in the function </typeparam>
+    /// <typeparam name="T"> Type T allows any type to be used </typeparam>
     public class Node<T>
     {
         /// <summary>
