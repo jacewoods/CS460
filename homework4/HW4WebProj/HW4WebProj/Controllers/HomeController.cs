@@ -19,5 +19,12 @@ namespace HW4WebProj.Controllers
 
             return View();
         }
+
+        public ActionResult Color()
+        {
+            ViewBag.Message = "Your Color Chooser page.";
+
+            return View();
+        }
     }
 }

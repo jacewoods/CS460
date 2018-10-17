@@ -16,7 +16,7 @@
             centimeters, and many other metric units! This uses query strings to send form data to the server and performs the
             calculation, returning the answer in the requested page.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        @Html.ActionLink("Click to Convert", "Converter", "Home", null, new { @class = "btn btn-primary btn-large" })
     </div>
     <div class="col-md-6">
         <h2>Color Chooser</h2>
@@ -24,6 +24,6 @@
             Want to mix your colors together? Now you can! Input two colors and find a resulting mixed color!
             This form POST's the data to the server.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        @Html.ActionLink("Mix Colors »", "Color", "Home", null, new { @class = "btn btn-primary btn-large" })
     </div>
 </div>
