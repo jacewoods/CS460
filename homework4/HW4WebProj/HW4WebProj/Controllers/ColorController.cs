@@ -18,8 +18,6 @@ namespace HW4WebProj.Controllers
 
         public ActionResult Color()
         {
-            ViewBag.Message = "Your converter page.";
-
             return View();
         }
     }
