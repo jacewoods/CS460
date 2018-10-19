@@ -17,19 +17,20 @@ namespace HW4WebProj.Controllers
         [HttpGet]
         public ActionResult Converter()
         {
+
+            string miles = Request.QueryString["mileInput"];
+            string metric = Request.QueryString["chooseMetric"];
+            string outputNum = metric;
+            if (miles != null)
             {
-
-                string name = Request.QueryString["user_name"];
-                if (name != null)
-                {
-                    string message = "Hello " + name + "! Welcome.";
-                    ViewBag.message = message;
-                    // Same as 
-                    //ViewData["message"] = message;
-                }
-
-                return View();
+                ViewBag.message = outputNum;
             }
+
+
+
+
+
+            return View();
 
         }
     }

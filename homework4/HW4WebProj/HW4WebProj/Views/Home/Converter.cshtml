@@ -9,18 +9,17 @@
 
 <h2>Convert Miles to Metric</h2>
 
-@if (ViewBag.message != null)
-{
-    <h3>@ViewBag.message</h3>
-}
-else
-{
+
+
     @*<form action="/Home/Message" method="post">*@
-    <form action="/Home/Converter" method="get">
+    <form action="Converter" method="get">
         <div class="col-sm-6">
 
             <label for="name"><b>Miles</b></label>
             <p><input type="number" id="mileNum" name="mileInput"></p>
+            <br /><br /><br /><br /><br />
+            <h4 style="color:darkred"><b>@ViewBag.message</b></h4>
+
         </div>
 
         <div class="col-sm-6">
@@ -53,7 +52,7 @@ else
 
 
     </form>
-}
+
 
 
 
