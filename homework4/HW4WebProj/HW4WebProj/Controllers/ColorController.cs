@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Drawing;
+using System.Diagnostics;
 
 namespace HW4WebProj.Controllers
 {
@@ -10,19 +12,23 @@ namespace HW4WebProj.Controllers
     {
         // GET: Color
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Create()
         {
-            ViewBag.Message = "Enter colors you wish to mix in HTML hexadecimal format. Ex: #AABBCC";
             ViewBag.show = false;
             return View();
         }
 
         [HttpPost]
-        public ActionResult Color(string firstColor, string secondColor)
+        public ActionResult Create(string firstColor, string secondColor)
         {
             firstColor = Request.Form["colorOne"];
             secondColor = Request.Form["colorTwo"];
 
+            if (firstColor != null && secondColor != null)
+            {
+                ViewBag.show = true;
+                ViewBag.item1 = firstColor;
+            }
             return View();
         }
     }

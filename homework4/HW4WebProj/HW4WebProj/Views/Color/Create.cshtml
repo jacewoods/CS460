@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Color Mixer";
+}
+
+<h2>Create a New Color</h2>
+<p>Enter colors you wish to mix in HTML hexadecimal format. Ex: #AABBCC</p>
+
+<div class="row">
+    <div class="col-sm-12">
+        @using (Html.BeginForm("Create", "Color", FormMethod.Post, new { id = 0, @class = "myForm" }))
+        {
+            <div class="form-group">
+                @Html.Label("colorOne", "First Color")
+                @Html.TextBox("colorOne", null, new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3,6}", @placeholder = "#12B37F", required = "required" })
+
+                @Html.Label("colorTwo", "Second Color")
+                @Html.TextBox("colorTwo", null, new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3,6}", @placeholder = "#A13344", required = "required" })
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Mix Colors" />
+        }
+
+        @if (ViewBag.show == true)
+        {
+            <p>@ViewBag.item1</p>
+        }
+
+
+
+    </div>
+</div>
