@@ -27,7 +27,46 @@ namespace HW4WebProj.Controllers
             if (firstColor != null && secondColor != null)
             {
                 ViewBag.show = true;
-                ViewBag.item1 = firstColor;
+
+                Color inputOne = ColorTranslator.FromHtml(firstColor);
+                Color inputTwo = ColorTranslator.FromHtml(secondColor);
+                Color mixedColor = new Color();
+
+                int red, green, blue = 0;
+
+                if(inputOne.R + inputTwo.R > 255)
+                {
+                    red = 255;
+                }
+                else
+                {
+                    red = inputOne.R + inputTwo.R;
+                }
+
+                if (inputOne.G + inputTwo.G > 255)
+                {
+                    green = 255;
+                }
+                else
+                {
+                    green = inputOne.G + inputTwo.G;
+                }
+
+                if (inputOne.B + inputTwo.B > 255)
+                {
+                    blue = 255;
+                }
+                else
+                {
+                    blue = inputOne.B + inputTwo.B;
+                }
+
+                mixedColor = Color.FromArgb(255, red, green, blue);
+                string thirdColor = ColorTranslator.ToHtml(mixedColor);
+
+                ViewBag.color1 = "background:" + firstColor;
+                ViewBag.color2 = "background:" + secondColor;
+                ViewBag.color3 = "background:" + thirdColor;
             }
             return View();
         }

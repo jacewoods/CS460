@@ -26,7 +26,14 @@
 
         @if (ViewBag.show == true)
         {
-            <p>@ViewBag.item1</p>
+            <br />
+            <div class="row">
+                <div class="col-sm-1" style="width:75px; height:75px; @ViewBag.color1; border-style:solid; border-width:1px"></div>
+                <div class="col-sm-1" style="width:45px;"><h3>+</h3></div>
+                <div class="col-sm-1" style="width:75px; height:75px; @ViewBag.color2; border-style:solid; border-width:1px"></div>
+                <div class="col-sm-1" style="width:45px;"><h3>=</h3></div>
+                <div class="col-sm-1" style="width:75px; height:75px; @ViewBag.color3; border-style:solid; border-width:1px"></div>
+            </div>
         }
 
 
