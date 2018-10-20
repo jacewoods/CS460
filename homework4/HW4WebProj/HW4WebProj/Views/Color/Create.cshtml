@@ -11,9 +11,11 @@
 
 <div class="row">
     <div class="col-sm-12">
+        @* Creates a form to be used for receiving user inputs *@
         @using (Html.BeginForm("Create", "Color", FormMethod.Post, new { id = 0, @class = "myForm" }))
         {
             <div class="form-group">
+                @* Razor HTML that gathers user input for the first two colors, adds restrictions for how input should be written *@
                 @Html.Label("colorOne", "First Color")
                 @Html.TextBox("colorOne", null, new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3,6}", @placeholder = "#12B37F", required = "required" })
 
@@ -35,8 +37,5 @@
                 <div class="col-sm-1" style="width:75px; height:75px; @ViewBag.color3; border-style:solid; border-width:1px"></div>
             </div>
         }
-
-
-
     </div>
 </div>
