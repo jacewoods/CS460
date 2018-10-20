@@ -16,12 +16,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+				
+                @* Homebar link to go to the home page *@
                 @Html.ActionLink("Homework-4", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @* Homebar links to go to the respective Converter and Color pages *@
                     <li>@Html.ActionLink("Converter", "Converter", "Home")</li>
-                    <li>@Html.ActionLink("ColorChooser", "Index", "Color")</li>
+                    <li>@Html.ActionLink("ColorChooser", "Create", "Color")</li>
                 </ul>
             </div>
         </div>
