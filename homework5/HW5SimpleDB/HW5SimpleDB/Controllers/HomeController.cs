@@ -11,6 +11,8 @@ namespace HW5SimpleDB.Controllers
 {
     public class HomeController : Controller
     {
+        public UserCollection uc = new UserCollection();
+
         public ActionResult Index()
         {
             return View();

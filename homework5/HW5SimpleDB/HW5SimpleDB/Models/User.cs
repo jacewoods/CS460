@@ -12,7 +12,7 @@ namespace HW5SimpleDB.Models
         [StringLength(20)]
         public string FirstName { get; set; }
 
-        [Required, StringLength(15)]
+        [Required, StringLength(10)]
         public string LastName { get; set; }
 
         [Required]
@@ -24,7 +24,7 @@ namespace HW5SimpleDB.Models
             {
                 var today = DateTime.Today;
                 var age = today.Year - DOB.Year;
-                if(DOB > today.AddYears (-age))
+                if (DOB > today.AddYears(-age))
                 {
                     age--;
                 }
@@ -34,7 +34,7 @@ namespace HW5SimpleDB.Models
 
         public override string ToString()
         {
-            return @"{base.ToString()}: {FirstName} {LastName} DOB = {DOB} Age = {Age}";
+            return $"{base.ToString()}: {FirstName} {LastName} DOB = {DOB} Age = {Age}";
         }
     }
 }

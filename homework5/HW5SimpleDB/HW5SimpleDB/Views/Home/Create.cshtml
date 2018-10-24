@@ -1,4 +1,4 @@
-﻿@model HW5SimpleDB.User
+﻿@model HW5SimpleDB.Models.User
 
 @{
     ViewBag.Title = "Create";
@@ -6,10 +6,10 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
         <h4>User</h4>
         <hr />
@@ -47,5 +47,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to ist", "Index")
 </div>

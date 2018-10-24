@@ -1,11 +1,10 @@
-﻿using HW5SimpleDB.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using HW5SimpleDB.Models;
 
-namespace User_NoDB.DAL
+namespace HW5SimpleDB.DAL
 {
     public class UserCollection
     {
