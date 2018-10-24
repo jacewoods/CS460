@@ -18,28 +18,7 @@ namespace HW5SimpleDB.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult SeeUser()
-        {
-            User test = new User { FirstName = "Bob", LastName = "Roberts", DOB = new DateTime(1994, 8, 13) };
-            Debug.WriteLine(test);
-            return View(test);
-        }
-
-        public ActionResult AllUsers()
+        public ActionResult AllForms()
         {
             return View(uc.Users);
         }
@@ -58,11 +37,7 @@ namespace HW5SimpleDB.Controllers
             if (ModelState.IsValid)
             {
                 uc.Users.Add(user);
-                foreach (var u in uc.Users)
-                {
-                    Debug.WriteLine(u);
-                }
-                return RedirectToAction("AllUsers");
+                return RedirectToAction("AllForms");
             }
             return View();
         }

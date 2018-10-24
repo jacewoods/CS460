@@ -1,17 +1,17 @@
 ﻿@model HW5SimpleDB.Models.User
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Form";
 }
 
-<h2>Create</h2>
+<h1 style="text-align:center; padding-bottom:10px;">Campus Apartments</h1>
+<h4 style="text-align:center;">Tennant Request Form</h4>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>User</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -47,5 +47,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to ist", "Index")
+    @Html.ActionLink("Back to Homepage", "Index")
 </div>
