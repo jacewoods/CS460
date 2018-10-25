@@ -11,7 +11,7 @@ namespace HW5SimpleDB.Controllers
 {
     public class HomeController : Controller
     {
-        public UserCollection uc = new UserCollection();
+        public DAL.FormCollection uc = new DAL.FormCollection();
 
         public ActionResult Index()
         {
@@ -31,7 +31,7 @@ namespace HW5SimpleDB.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(User user)
+        public ActionResult Create(FridgeForm user)
         {
             Debug.WriteLine(user);
             if (ModelState.IsValid)
