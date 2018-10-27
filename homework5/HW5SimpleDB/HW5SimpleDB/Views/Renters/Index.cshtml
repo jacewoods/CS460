@@ -1,69 +1,63 @@
 ﻿@model IEnumerable<HW5SimpleDB.Models.Renter>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "View Requests";
 }
 
-<h2>Index</h2>
+<h1 style="text-align:center; padding-bottom:10px;">Campus Apartments</h1>
+<h4 style="text-align:center;">All Current Renter Requests</h4>
+<br />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
-    <tr>
+    <tr style="border: 3px solid black; background-color: #C4C4C4; font-style:italic;">
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            Last Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            Phone Number
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ApartmentName)
+            Apartment Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UnitNumber)
+            Unit Number
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Explanation)
+            Explanation of Request
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Permission)
+            Permission to Enter Unit
         </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApartmentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnitNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Explanation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Permission)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr style="border: 3px solid black; background-color: #E2E2E2;">
+            <th>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.ApartmentName)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.UnitNumber)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Explanation)
+            </th>
+            <th style="text-align:center;">
+                @Html.DisplayFor(modelItem => item.Permission)
+            </th>
+        </tr>
+    }
 
 </table>
