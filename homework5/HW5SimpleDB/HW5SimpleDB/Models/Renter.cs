@@ -11,22 +11,22 @@ namespace HW5SimpleDB.Models
         [Key]
         public int ID { get; set; }
 
-        [Required, StringLength(20)]
+        [Required (ErrorMessage = "Please input a First Name"), StringLength(20, ErrorMessage = "Input can be no longer than 20 Characters")]
         public string FirstName { get; set; }
 
-        [Required, StringLength(20)]
+        [Required (ErrorMessage = "Please input a Last Name"), StringLength(20, ErrorMessage ="Input can be no longer than 20 Characters")]
         public string LastName { get; set; }
 
-        [Required, RegularExpression("^\\d{3}-\\d{3}-\\d{4}$")]
+        [Required (ErrorMessage ="Please input a Phone Number"), RegularExpression("^\\d{3}-\\d{3}-\\d{4}$", ErrorMessage = "Phone Number must be in format \"XXX-XXX-XXXX\"")]
         public string PhoneNumber { get; set; }
 
-        [Required, StringLength(30)]
+        [Required (ErrorMessage = "Please input an Apartment Name"), StringLength(30, ErrorMessage = "Input can be no longer than 30 Characters")]
         public string ApartmentName { get; set; }
 
-        [Required, Range(0,9999)]
+        [Required (ErrorMessage = "Please input a Unit Number"), Range(0,9999, ErrorMessage = "Unit Number must be between 0 and 9999")]
         public int UnitNumber { get; set; }
 
-        [Required, StringLength(200)]
+        [Required (ErrorMessage = "Please input an Explanation"), StringLength(60, ErrorMessage = "Input can be no longer than 60 Characters")]
         public string Explanation { get; set; }
 
         [Required]

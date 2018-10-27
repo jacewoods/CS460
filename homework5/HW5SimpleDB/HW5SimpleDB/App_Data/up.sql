@@ -2,12 +2,12 @@
 CREATE TABLE [dbo].[Renters]
 (
 	[ID]			INT IDENTITY (1,1)	NOT NULL,
-	[FirstName]		NVARCHAR(32)		NOT NULL,
-	[LastName]		NVARCHAR(32)		NOT NULL,
-	[PhoneNumber]	NVARCHAR(16)		NOT NULL,
-	[ApartmentName]	NVARCHAR(64)		NOT NULL,
+	[FirstName]		NVARCHAR(20)		NOT NULL,
+	[LastName]		NVARCHAR(20)		NOT NULL,
+	[PhoneNumber]	NVARCHAR(12)		NOT NULL,
+	[ApartmentName]	NVARCHAR(30)		NOT NULL,
 	[UnitNumber]	INT					NOT NULL,
-	[Explanation]	NVARCHAR(120)		NOT NULL,
+	[Explanation]	NVARCHAR(60)		NOT NULL,
 	[Permission]	BIT					NOT NULL,
 	CONSTRAINT [PK_dbo.Renters] PRIMARY KEY CLUSTERED ([ID] ASC)
 );
