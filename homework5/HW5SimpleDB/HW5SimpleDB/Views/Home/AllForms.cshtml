@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HW5SimpleDB.Models.FridgeForm>
+﻿@model IEnumerable<HW5SimpleDB.Models.Renter>
 
 @{
     ViewBag.Title = "All Forms";
@@ -8,38 +8,8 @@
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DOB)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Age)
-        </th>
-        <th></th>
+
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(m => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(k => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DOB)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td></td>
-        </tr>
-    }
 
 </table>

@@ -11,7 +11,7 @@ namespace HW5SimpleDB.Controllers
 {
     public class HomeController : Controller
     {
-        public DAL.FormCollection uc = new DAL.FormCollection();
+        public DAL.RenterContext uc = new DAL.RenterContext();
 
         public ActionResult Index()
         {
@@ -20,7 +20,7 @@ namespace HW5SimpleDB.Controllers
 
         public ActionResult AllForms()
         {
-            return View(uc.Users);
+            return View(uc.Renters);
         }
 
         // GET-POST-Redirect to GET
@@ -31,12 +31,12 @@ namespace HW5SimpleDB.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(FridgeForm user)
+        public ActionResult Create(Renter user)
         {
             Debug.WriteLine(user);
             if (ModelState.IsValid)
             {
-                uc.Users.Add(user);
+                uc.Renters.Add(user);
                 return RedirectToAction("AllForms");
             }
             return View();
