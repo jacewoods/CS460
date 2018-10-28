@@ -1,5 +1,6 @@
 ﻿@model HW5SimpleDB.Models.Renter
 
+@* View that builds the layout for submitting a request form *@
 @{
     ViewBag.Title = "Create Form";
 }
@@ -59,10 +60,10 @@
 
     <div class="form-group">
         <div class="col-md-8">
-            <input type="submit" value="Submit Request" class="btn btn-default" style="background-color:#E2E2E2; border:2px solid black; font-weight: bold; margin-top:-59px;" />
+            <input type="submit" value="Submit Request" class="btn btn-default" style="background-color:#E2E2E2; border:2px solid black; font-weight: bold; margin-top:-50px;" />
         </div>
         <div class="col-md-4">
-            <div class="checkbox" style="border: 1px solid black; background-color:#E2E2E2; padding-left:3px; margin-top:-59px;">
+            <div class="checkbox" style="border: 1px solid black; background-color:#E2E2E2; padding-left:3px; margin-top:-50px;">
                 @Html.LabelFor(model => model.Permission, "Select the box in the bottom left to give permission for the landlord" +
                                           " or representative to first call and then enter your unit and perform the necessary maintenance")
                 @Html.EditorFor(model => model.Permission)

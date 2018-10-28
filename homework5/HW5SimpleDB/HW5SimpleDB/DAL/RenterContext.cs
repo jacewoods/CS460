@@ -5,6 +5,10 @@ using System.Linq;
 using System.Web;
 using HW5SimpleDB.Models;
 
+
+/// <summary>
+/// Connect the "OurRenters" database to the application
+/// </summary>
 namespace HW5SimpleDB.DAL
 {
     public class RenterContext : DbContext

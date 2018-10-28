@@ -9,6 +9,10 @@ using System.Web.Mvc;
 using HW5SimpleDB.DAL;
 using HW5SimpleDB.Models;
 
+
+/// <summary>
+/// Controller for the Create Form and Table List views
+/// </summary>
 namespace HW5SimpleDB.Controllers
 {
     public class RentersController : Controller

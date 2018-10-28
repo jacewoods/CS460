@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
+/// <summary>
+/// Establish the elements that will be used in the database, including their required inputs and error messages that transfer to View
+/// </summary>
 namespace HW5SimpleDB.Models
 {
     public class Renter
@@ -31,8 +34,6 @@ namespace HW5SimpleDB.Models
 
         [Required]
         public bool Permission { get; set; }
-
-
         
 
         public override string ToString()

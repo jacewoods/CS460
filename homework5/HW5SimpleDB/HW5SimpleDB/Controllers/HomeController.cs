@@ -7,6 +7,10 @@ using System.Web.Mvc;
 using HW5SimpleDB.Models;
 using HW5SimpleDB.DAL;
 
+
+/// <summary>
+/// Homepage Controller
+/// </summary>
 namespace HW5SimpleDB.Controllers
 {
     public class HomeController : Controller
