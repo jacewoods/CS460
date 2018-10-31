@@ -189,7 +189,7 @@
     <Compile Include="Models\SystemParameter.cs" />
     <Compile Include="Models\TransactionType.cs" />
     <Compile Include="Models\VehicleTemperature.cs" />
-    <Compile Include="Models\WorldWideImportersContext.cs" />
+    <Compile Include="DAL\WorldWideImportersContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>

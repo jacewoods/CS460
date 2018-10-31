@@ -34,6 +34,14 @@ namespace HW5SimpleDB.Models
 
         [Required]
         public bool Permission { get; set; }
+
+        private DateTime Date = DateTime.Now;
+
+        public DateTime CurrentTime
+        {
+            get { return Date; }
+            set { Date = value; }
+        }
         
 
         public override string ToString()

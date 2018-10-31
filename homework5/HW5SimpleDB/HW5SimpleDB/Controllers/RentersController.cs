@@ -22,7 +22,7 @@ namespace HW5SimpleDB.Controllers
         // GET: Renters
         public ActionResult Index()
         {
-            return View(db.Renters.ToList());
+            return View(db.Renters.OrderBy(Renters => Renters.CurrentTime).ToList());
         }
 
 
