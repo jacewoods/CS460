@@ -13,9 +13,21 @@ namespace PreExistingRelationalDB.Controllers
     {
         private WorldWideImportersContext db = new WorldWideImportersContext();
 
-        public ActionResult Index()
+        public ActionResult Index(String input)
         {
-            return View();
+            ViewModel vm = new ViewModel();
+
+            input = Request.QueryString["input"];
+            if (input == null)
+            {
+                ViewBag.show = false;
+                return View();
+            }
+            else
+            {
+                ViewBag.show = true;
+                return View(db.People.Where(p => p.FullName.Contains(input)).ToList());
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@* @model IEnumerable < PreExistingRelationalDB.Models.Person> *@
+﻿@model IEnumerable<PreExistingRelationalDB.Models.Person>
 
 @{
     ViewBag.Title = "World Wide Importers";
@@ -10,10 +10,29 @@
 {
     <div class="form-group">
 
-        @Html.TextBox("input", null, new { @class = "form-control", @placeholder = "Search using Client Name", required = "required", @style = "margin: 0px auto;" })
+        @Html.TextBox("input", "", new { @class = "form-control", @placeholder = "Search using Client Name", required = "required", @style = "margin: 0px auto;" })
         <div style="text-align:center; margin-top:5px;">
             <button class="btn btn-default" type="submit" style="background-color:#FF2F2F; color:white; text-align:center;">Search</button>
         </div>
     </div>
+}
 
+@if (ViewBag.show)
+{
+    if (Model.Count() == 0)
+    {
+        <h4 style="color:#FF2F2F;">No matches found with that name.</h4>
+    }
+
+    else
+    {
+        <h4>Names containing the search input:</h4>
+        foreach (var searchResult in Model)
+        {
+
+            <div class="btn btn-primary btn-md btn-block"  style="margin-bottom:3px;">
+                    @searchResult.FullName (@searchResult.PreferredName)
+            </div>
+        }
+    }
 }
