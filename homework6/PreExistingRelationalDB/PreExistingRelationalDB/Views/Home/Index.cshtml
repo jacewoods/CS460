@@ -4,7 +4,7 @@
     ViewBag.Title = "World Wide Importers";
 }
 
-<h2 style="text-align:center; margin-top:-10px;">Client Search</h2>
+<h2 style="text-align:center; margin-top:-10px; font-family:'Bodoni MT'">Client Search</h2>
 
 @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @style = "margin-top:30px;" }))
 {
@@ -30,8 +30,8 @@
         foreach (var searchResult in Model)
         {
 
-            <div class="btn btn-primary btn-md btn-block"  style="margin-bottom:3px;">
-                    @searchResult.FullName (@searchResult.PreferredName)
+            <div style="margin-bottom:3px;">
+                    <a class="btn btn-primary btn-md btn-block" href="Home/Employee/@searchResult.PersonID" role="button"> @searchResult.FullName (@searchResult.PreferredName) </a>
             </div>
         }
     }

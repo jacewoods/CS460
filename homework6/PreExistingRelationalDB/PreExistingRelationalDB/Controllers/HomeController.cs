@@ -15,8 +15,6 @@ namespace PreExistingRelationalDB.Controllers
 
         public ActionResult Index(String input)
         {
-            ViewModel vm = new ViewModel();
-
             input = Request.QueryString["input"];
             if (input == null)
             {
@@ -26,8 +24,17 @@ namespace PreExistingRelationalDB.Controllers
             else
             {
                 ViewBag.show = true;
-                return View(db.People.Where(p => p.FullName.Contains(input)).ToList());
+                return View(db.People.Where(search => search.FullName.Contains(input)).ToList());
             }
+        }
+
+        public ActionResult Employee(int? id)
+        {
+            ViewModel vm = new ViewModel();
+
+            vm.Person = db.People.Find(id);
+
+            return View(vm);
         }
     }
 }
