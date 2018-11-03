@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PreExistingRelationalDB.Models;
+using PreExistingRelationalDB.Models.ViewModels;
+
 
 namespace PreExistingRelationalDB.Controllers
 {
@@ -13,7 +15,7 @@ namespace PreExistingRelationalDB.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Cities.ToList());
+            return View();
         }
     }
 }
