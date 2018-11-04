@@ -59,6 +59,11 @@ namespace PreExistingRelationalDB.Controllers
                 int custID = vm.Person.Customers2.FirstOrDefault().CustomerID;
 
                 vm.Customer = db.Customers.Find(custID);
+
+                ViewBag.GrossSales = vm.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(il => il.InvoiceLines).Sum(ep => ep.ExtendedPrice);
+
+                ViewBag.GrossProfit = vm.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(il => il.InvoiceLines).Sum(lp => lp.LineProfit);
+
             }
 
 

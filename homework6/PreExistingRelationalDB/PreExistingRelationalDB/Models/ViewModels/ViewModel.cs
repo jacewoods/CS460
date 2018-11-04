@@ -13,5 +13,7 @@ namespace PreExistingRelationalDB.Models.ViewModels
         public Person Person { get; set; }
 
         public Customer Customer { get; set; }
+
+        public List<InvoiceLine> InvoiceLine { get; set; }
     }
 }
