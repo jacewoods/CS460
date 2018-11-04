@@ -40,11 +40,27 @@ namespace PreExistingRelationalDB.Controllers
         /// </summary>
         /// <param name="id"> Person selected in search has unique ID, added here </param>
         /// <returns> ViewModel with Person information </returns>
-        public ActionResult Employee(int? id)
+        public ActionResult Info(int? id)
         {
+            //Assume the person is an employee initially
+            ViewBag.NotEmployee = false;
+
             ViewModel vm = new ViewModel();
 
             vm.Person = db.People.Find(id);
+
+
+
+            // Checks if person has Customer data, if so they are a Customer
+            if (vm.Person.Customers2.Count() > 0)
+            {
+                ViewBag.NotEmployee = true;
+
+                int custID = vm.Person.Customers2.FirstOrDefault().CustomerID;
+
+                vm.Customer = db.Customers.Find(custID);
+            }
+
 
             return View(vm);
         }
