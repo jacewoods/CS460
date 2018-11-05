@@ -49,24 +49,36 @@ namespace PreExistingRelationalDB.Controllers
 
             vm.Person = db.People.Find(id);
 
-
+            // Returns 404 if ID is not in the database or the Person does not meet qualifications for the search
+            if(id == null || vm.Person == null)
+            {
+                return HttpNotFound();
+            }
 
             // Checks if person has Customer data, if so they are a Customer
             if (vm.Person.Customers2.Count() > 0)
             {
                 ViewBag.NotEmployee = true;
 
+                // Finds the Customer ID
                 int custID = vm.Person.Customers2.FirstOrDefault().CustomerID;
 
+                // Finds the Customer via the Customer ID
                 vm.Customer = db.Customers.Find(custID);
 
+                // Gets the Gross Sales and Gross Profit for Purchase History table
                 ViewBag.GrossSales = vm.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(il => il.InvoiceLines).Sum(ep => ep.ExtendedPrice);
-
                 ViewBag.GrossProfit = vm.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(il => il.InvoiceLines).Sum(lp => lp.LineProfit);
 
+                // Builds a list of top 10 items purchased in descending order by selecting into the invoicelines data table
+                vm.InvoiceLine = vm.Customer.Orders.SelectMany(i => i.Invoices)
+                                                .SelectMany(il => il.InvoiceLines)
+                                                .OrderByDescending(lp => lp.LineProfit)
+                                                .Take(10)
+                                                .ToList();
             }
 
-
+            // Sent back to the view with the appropriate information to create the tables
             return View(vm);
         }
     }

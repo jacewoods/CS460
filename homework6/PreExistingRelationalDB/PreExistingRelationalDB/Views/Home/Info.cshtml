@@ -58,6 +58,7 @@
 
     @if (ViewBag.NotEmployee)
     {
+        @* Table for "Company Profile" feature *@
         <div class="row" style="margin-top:15px;">
             <div class="col-md-6" style="border:3px solid black; background-color:#E5E5E5;">
                 <h2 style="text-align:center; font-weight:bold; margin-bottom:15px; border-bottom: 2px solid gray; padding-bottom: 15px;">
@@ -102,6 +103,7 @@
             </div>
         </div>
 
+        @* Table for "Purchase History Summary" feature *@
         <div class="row" style="margin-top:15px;">
             <div class="col-md-6" style="border:3px solid black; background-color:#E5E5E5;">
                 <h2 style="text-align:center; font-weight:bold; margin-bottom:15px; border-bottom: 2px solid gray; padding-bottom: 15px;">
@@ -131,10 +133,62 @@
                 </dl>
             </div>
         </div>
+
+        @* Table for "Items Purchased" feature *@
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-6" style="border:3px solid black; background-color:#E5E5E5;">
+                <h2 style="text-align:center; font-weight:bold; margin-bottom:15px; border-bottom: 2px solid gray; padding-bottom: 15px;">
+                    Top 10 Items Purchased By Profit
+                </h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Stock Item ID
+                            </th>
+
+                            <th>
+                                Description
+                            </th>
+
+                            <th>
+                                Line Profit
+                            </th>
+
+                            <th>
+                                Sales Person
+                            </th>
+
+                            
+                        </tr>
+                    </thead>
+
+                    @foreach (var results in Model.InvoiceLine)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(result => results.StockItemID)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(result => results.Description)
+                                </td>
+
+                                <td>
+                                    @string.Format("{0:C}", results.LineProfit)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(result => results.Invoice.Person4.FullName)
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
     }
-
-
-
     <br />
     @Html.ActionLink("Back to Search", "Index", "Home", new { @style = "margin-left:510px; font-weight:bold;" })
 

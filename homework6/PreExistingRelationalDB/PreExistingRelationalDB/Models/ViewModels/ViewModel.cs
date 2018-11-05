@@ -14,6 +14,6 @@ namespace PreExistingRelationalDB.Models.ViewModels
 
         public Customer Customer { get; set; }
 
-        public List<InvoiceLine> InvoiceLine { get; set; }
+        public IEnumerable<InvoiceLine> InvoiceLine { get; set; }
     }
 }
