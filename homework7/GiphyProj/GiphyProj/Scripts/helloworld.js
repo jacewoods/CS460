@@ -5,7 +5,7 @@
 $("#Request").bind('keypress', function (e) {
     if (e.key === ' ' || e.key === 'Spacebar') {
         //$("#message").append("Hello, World! ");
-        var a = $("#Request").val();
+        var a = $("#Request").val().split(" ").slice(-1);
         console.log(a);
         var source = "/Hello/HelloWorld/" + a;
         console.log(source);
@@ -23,7 +23,9 @@ $("#Request").bind('keypress', function (e) {
 
 function displayData(data) {
     console.log(data);
-    $("#message").append(data["test"] + " ");
+    if (data["test"] != null) {
+        $("#message").append(data["test"] + " ");
+    }
 }
 
 function errorOnAjax() {
