@@ -9,10 +9,11 @@ namespace GiphyProj.Controllers
     public class HelloController : Controller
     {
         // GET: Hello
-        public JsonResult HelloWorld()
+        public JsonResult HelloWorld(string id)
         {
             var data = new
             {
+                test = id,
                 message = "Hello",
             };
             return Json(data, JsonRequestBehavior.AllowGet);

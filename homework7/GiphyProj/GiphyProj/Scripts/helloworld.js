@@ -1,11 +1,11 @@
-﻿console.log("In hellowworld.js")
+﻿console.log("In helloworld.js")
 
 
 
-$("#Request").keypress(function (e) {
+$("#Request").bind('keypress', function (e) {
     if (e.key === ' ' || e.key === 'Spacebar') {
-        $("#message").html("Hello, World.");
-        var a = 5;
+        //$("#message").append("Hello, World! ");
+        var a = $("#Request").val();
         console.log(a);
         var source = "/Hello/HelloWorld/" + a;
         console.log(source);
@@ -23,7 +23,7 @@ $("#Request").keypress(function (e) {
 
 function displayData(data) {
     console.log(data);
-    $("message").text(data["message"]);
+    $("#message").append(data["test"] + " ");
 }
 
 function errorOnAjax() {
