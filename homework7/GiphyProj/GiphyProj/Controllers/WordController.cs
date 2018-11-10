@@ -11,7 +11,7 @@ namespace GiphyProj.Controllers
     public class WordController : Controller
     {
         // GET: Hello
-        public JsonResult WordConvert(string id)
+        public JsonResult BoringWords(string id)
         {
             var data = new
             {
