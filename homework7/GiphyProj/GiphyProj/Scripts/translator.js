@@ -9,7 +9,7 @@ var boringWordDict =
         "everything", "neither", "nobody", "no", "nothing", "one", "somebody",
         "someone", "something", "both", "few", "many", "several", "all", "any",
         "most", "none", "some", "myself", "ourselves", "yourself", "yourselves",
-        "himself", "herself", "itself", "themselves", "her", "its", "our",
+        "himself", "herself", "itself", "themselves", "her", "its", "our", "trying",
         "your", "their", "mine", "yours", "his", "hers", "ours", "theirs"];
 
 $("#UserWord").bind('keypress', function (e) {
