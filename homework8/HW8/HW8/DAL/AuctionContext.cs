@@ -15,6 +15,9 @@ namespace HW8.DAL
         public virtual DbSet<Bid> Bids { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<Seller> Sellers { get; set; }
-    }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+        }
+    }
 }
