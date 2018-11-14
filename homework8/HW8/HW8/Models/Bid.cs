@@ -8,6 +8,18 @@ namespace HW8.Models
 
     public partial class Bid
     {
-        public int ID { get; set; }
+        public int BidID { get; set; }
+
+        public int ItemID { get; set; }
+
+        public int BuyerID { get; set; }
+
+        public int Price { get; set; }
+
+        public DateTime Timestamp { get; set; }
+
+        public virtual Item Item { get; set; }
+
+        public virtual Buyer Buyer { get; set; }
     }
 }
