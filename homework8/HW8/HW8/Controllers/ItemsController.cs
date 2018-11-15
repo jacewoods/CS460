@@ -39,7 +39,7 @@ namespace HW8.Controllers
         // GET: Items/Create
         public ActionResult Create()
         {
-            ViewBag.SellerID = new SelectList(db.Sellers, "SellerID", "Name");
+            ViewBag.SellerID = new SelectList(db.Sellers, "SellerID", "SellerName");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace HW8.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ItemID,Name,Description,SellerID")] Item item)
+        public ActionResult Create([Bind(Include = "ItemID,ItemName,Description,SellerID")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace HW8.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.SellerID = new SelectList(db.Sellers, "SellerID", "Name", item.SellerID);
+            ViewBag.SellerID = new SelectList(db.Sellers, "SellerID", "SellerName", item.SellerID);
             return View(item);
         }
 
@@ -73,7 +73,7 @@ namespace HW8.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.SellerID = new SelectList(db.Sellers, "SellerID", "Name", item.SellerID);
+            ViewBag.SellerID = new SelectList(db.Sellers, "SellerID", "SellerName", item.SellerID);
             return View(item);
         }
 
@@ -82,7 +82,7 @@ namespace HW8.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ItemID,Name,Description,SellerID")] Item item)
+        public ActionResult Edit([Bind(Include = "ItemID,ItemName,Description,SellerID")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace HW8.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.SellerID = new SelectList(db.Sellers, "SellerID", "Name", item.SellerID);
+            ViewBag.SellerID = new SelectList(db.Sellers, "SellerID", "SellerName", item.SellerID);
             return View(item);
         }
 

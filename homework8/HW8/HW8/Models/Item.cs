@@ -14,11 +14,13 @@ namespace HW8.Models
             Bids = new HashSet<Bid>();
         }
 
+        [Display(Name ="Item ID")]
         public int ItemID { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        [Display(Name="Item Name")]
+        public string ItemName { get; set; }
 
         [Required]
         [StringLength(400)]

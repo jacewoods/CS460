@@ -168,9 +168,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Auctions.mdf" />
-    <Content Include="App_Data\Auctions_log.ldf">
-      <DependentUpon>Auctions.mdf</DependentUpon>
+    <Content Include="App_Data\AuctionsContext.mdf" />
+    <Content Include="App_Data\AuctionsContext_log.ldf">
+      <DependentUpon>AuctionsContext.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\down.sql" />
     <Content Include="App_Data\up.sql" />
