@@ -16,7 +16,13 @@ namespace HW8.Models
 
         public int Price { get; set; }
 
-        public DateTime Timestamp { get; set; }
+        private DateTime Date = DateTime.Now;
+
+        public DateTime Timestamp
+        {
+            get { return Date; }
+            set { Date = value; }
+        }
 
         public virtual Item Item { get; set; }
 
