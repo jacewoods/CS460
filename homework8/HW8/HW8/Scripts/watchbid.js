@@ -1,11 +1,10 @@
 ﻿
 console.log("In watchbid.js");
-var DetailID = window.location.href.split("/").slice(-1)[0];
+var id = window.location.href.split("/").slice(-1)[0];
 
 $(document).ready(function () {
-    console.log(DetailID);
-    var source = "/Items/ShowBids/" + DetailID;
-    console.log(source);
+    var source = "/Items/ShowBids/" + id;
+
     var ajax_call = function () {
         $.ajax({
             type: "GET",
@@ -22,12 +21,17 @@ $(document).ready(function () {
 
     function displayData(data) {
 
-        //data.test += 1;
+        var bidUpdater = "<table class = \"table\"><thead><tr><th>Buyer Name</th><th>Bid Price</th></tr></thead><tbody>";
 
-        console.log(data);
-        if (data["test"] !== null) {
-            $("#message").html(data["test"] + " ");
-        }
+        $.each(data, function (i, item) {
+
+            bidUpdater += "<tr>" + "<td>" + item.BuyerName +
+                "</td>" + "<td> $" + item.Price + "</td>" + "</tr>";
+
+        });
+
+        $("#message").html(bidUpdater);
+
     }
 });
 function errorOnAjax() {

@@ -122,12 +122,14 @@ namespace HW8.Controllers
 
         public JsonResult ShowBids(int? id)
         {
-            var data = new
-            {
-                test = id,
-                message = "Hello",
-            };
-            return Json(data, JsonRequestBehavior.AllowGet);
+            var bidData = db.Items.Where(i => i.ItemID == id)
+                .Select(b => b.Bids)
+                .FirstOrDefault()
+                .Select(b => new { b.Price, b.Buyer.BuyerName })
+                .OrderBy(b => b.Price)
+                .ToList();
+
+            return Json(bidData, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

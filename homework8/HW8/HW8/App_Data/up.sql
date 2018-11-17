@@ -57,7 +57,7 @@ INSERT INTO dbo.Sellers(SellerName) VALUES
 	('Tammy Tarans')
 
 INSERT INTO dbo.Items(ItemName,Description,SellerID) VALUES
-	('The Second Bicycle ever built', 'Designed in Florida in 1502', 1),
+	('A Weird Painting', 'It is very weird looking so people want to pay a lot of money', 1),
 	('A Cool Wallet', 'This Wallet is very cool', 1),
 	('Yard Sign', 'Plain white yard sign', 2),
 	('Snowball', 'A Snowball frozen 105 years ago', 3)
