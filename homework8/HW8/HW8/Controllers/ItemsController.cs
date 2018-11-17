@@ -120,6 +120,16 @@ namespace HW8.Controllers
             return RedirectToAction("Index");
         }
 
+        public JsonResult ShowBids(int? id)
+        {
+            var data = new
+            {
+                test = id,
+                message = "Hello",
+            };
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

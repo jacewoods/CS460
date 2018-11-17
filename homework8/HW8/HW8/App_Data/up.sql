@@ -18,7 +18,7 @@ CREATE TABLE dbo.Sellers
 
 CREATE TABLE dbo.Items
 (
-	ItemID	INT IDENTITY (1,1)	NOT NULL,
+	ItemID	INT IDENTITY (1001,1)	NOT NULL,
 	ItemName NVARCHAR(100) NOT NULL,
 	Description NVARCHAR(400) NOT NULL,
 	SellerID INT NOT NULL,
@@ -63,10 +63,10 @@ INSERT INTO dbo.Items(ItemName,Description,SellerID) VALUES
 	('Snowball', 'A Snowball frozen 105 years ago', 3)
 
 INSERT INTO dbo.Bids(ItemID, BuyerID, Price, Timestamp) VALUES
-	(1, 1, 400, '2018-11-11'),
-	(1, 3, 450, '2018-11-11'),
-	(1, 2, 500, '2018-11-12'),
-	(2, 1, 2000, '2018-11-12'),
-	(3, 3, 30, '2018-11-13'),
-	(3, 2, 31, '2018-11-13'),
-	(4, 2, 950, '2018-11-13')
+	(1001, 1, 400, '2018-11-11 11:15:14'),
+	(1001, 3, 450, '2018-11-11 11:16:10'),
+	(1001, 2, 500, '2018-11-12 03:30:14'),
+	(1002, 1, 2000, '2018-11-12 04:12:44'),
+	(1003, 3, 30, '2018-11-13 01:59:45'),
+	(1003, 2, 31, '2018-11-13 09:16:33'),
+	(1004, 2, 950, '2018-11-13 13:13:12')
