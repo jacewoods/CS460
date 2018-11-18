@@ -14,7 +14,8 @@ namespace HW8.Controllers
 
         public ActionResult Index()
         {
-            var bids = db.Bids.Include(b => b.Buyer).Include(b => b.Item);
+            var bids = db.Bids.Include(b => b.Buyer).Include(b => b.Item)
+                .OrderByDescending(b => b.Timestamp).Take(10);
             return View(bids.ToList());
         }
 
