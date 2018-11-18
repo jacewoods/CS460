@@ -15,7 +15,8 @@ $(document).ready(function () {
         });
     };
 
-    var interval = 1000 * 5;
+    // AJAX will load every 3 seconds
+    var interval = 3000;
     window.setInterval(ajax_call, interval);
 
 

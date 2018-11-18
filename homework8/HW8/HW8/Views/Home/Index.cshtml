@@ -33,23 +33,32 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ItemID)
-        </td>
-        <td>
-            @Html.ActionLink(item.Item.ItemName, "Details", "Items", new { id = item.ItemID }, null)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Buyer.BuyerName)
-        </td>
-        <td>
-            $@Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Timestamp)
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemID)
+            </td>
+            <td>
+                @Html.ActionLink(item.Item.ItemName, "Details", "Items", new { id = item.ItemID }, null)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buyer.BuyerName)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @if (item.Timestamp.Date == DateTime.Today)
+                {
+                    DateTime timeOnly = item.Timestamp;
+                    @timeOnly.ToString("h:mm:ss tt")
+                }
+
+                else
+                {
+                @Html.DisplayFor(modelItem => item.Timestamp)
+                }
+            </td>
+        </tr>
     }
 
 </table>
