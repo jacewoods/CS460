@@ -126,7 +126,7 @@ namespace HW8.Controllers
                 .Select(b => b.Bids)
                 .FirstOrDefault()
                 .Select(b => new { b.Price, b.Buyer.BuyerName })
-                .OrderBy(b => b.Price)
+                .OrderByDescending(b => b.Price)
                 .ToList();
 
             return Json(bidData, JsonRequestBehavior.AllowGet);

@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     function displayData(data) {
 
-        var bidUpdater = "<table class = \"table\"><thead><tr><th>Buyer Name</th><th>Bid Price</th></tr></thead><tbody>";
+        var bidUpdater = "<table class = \"table\"><thead><tr><th>Bidder Name</th><th>Bid Price</th></tr></thead><tbody>";
 
         $.each(data, function (i, item) {
 

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<HW8.Models.Bid>
+
+@{
     ViewBag.Title = "Homepage";
 }
 
@@ -6,5 +8,12 @@
     <h1 style="font-family:'Spectral SC'; text-align:center;">REGINALD'S ANCIENT ANTIQUITIES AUCTION HOUSE</h1>
 </div>
 
-<p class="btn btn-primary" style="width:60%; display:block; margin: 0 auto; font-weight:bold;" 
+<p class="btn btn-primary" style="width:60%; display:block; margin: 0 auto; font-weight:bold;"
    onclick="location.href='@Url.Action("Create", "Bids")'">Bid on an Item!</p>
+
+@foreach (var item in Model)
+{
+    <div>
+        @Html.DisplayFor(modelItem => item.Price)
+    </div>
+}
